@@ -70,4 +70,4 @@ $ docker run --mount type=bind,source=/Users/foo/Work/openwsn-fw,destination=/ho
 ## How to Build your own Docker image
 1. clone this repository
 1. edit `Dockerfile` as you want
-1. run `$ docker build .`
+1. run `$ docker build .` or `$ docker build --no-cache .`
