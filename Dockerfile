@@ -12,6 +12,8 @@ RUN apt-get -y install gcc-arm-embedded
 
 RUN useradd user
 RUN echo '%user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN mkdir -p  /home/user/openwsn-fw
+RUN chown -R user:user /home/user
 
 USER user
 WORKDIR /home/user/openwsn-fw
