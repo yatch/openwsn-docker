@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install scons gcc-msp430 python-pip sudo
+RUN apt-get -y install scons gcc-msp430 python-pip sudo git
 
 # The official package of gcc-arm-none-eabi by Ubuntu is kind of
 # old. Use a package by "GCC Arm Embedded Maintainers" team
@@ -12,6 +12,8 @@ RUN apt-get -y install gcc-arm-embedded
 
 RUN useradd user
 RUN echo '%user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN mkdir -p  /home/user/openwsn-fw
+RUN chown -R user:user /home/user
 
 USER user
 WORKDIR /home/user/openwsn-fw
